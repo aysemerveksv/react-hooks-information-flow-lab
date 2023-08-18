@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Item from "./Item";
+import Filter from './Filter';
 
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -16,6 +17,7 @@ function ShoppingList({ items }) {
 
   return (
     <div className="ShoppingList">
+      <Filter category={category} onCategoryChange={handleCategoryChange} />
       <div className="Filter">
         <select name="filter" onChange={handleCategoryChange}>
           <option value="All">Filter by category</option>
